@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hesap Doğrulama</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        background: #0f172a;
+        color: #e5e7eb;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      .card {
+        background: #020617;
+        border-radius: 16px;
+        padding: 32px 28px;
+        box-shadow: 0 24px 60px rgba(15, 23, 42, 0.8);
+        max-width: 420px;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+      }
+      .status-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: rgba(34, 197, 94, 0.1);
+        color: #4ade80;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 12px;
+      }
+      .status-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: #22c55e;
+        box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.25);
+      }
+      h1 {
+        font-size: 24px;
+        margin: 0 0 8px;
+      }
+      p {
+        margin: 4px 0;
+        color: #9ca3af;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      .email {
+        color: #e5e7eb;
+        font-weight: 600;
+        word-break: break-all;
+      }
+      .small {
+        font-size: 12px;
+        margin-top: 16px;
+        opacity: 0.8;
+      }
+    </style>
+    <script>
+      // URL parametrelerinden email çek (varsa)
+      function getQueryParam(key) {
+        const params = new URLSearchParams(window.location.search);
+        return params.get(key);
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const emailSpan = document.getElementById("user-email");
+        const email = getQueryParam("email");
+        if (email && emailSpan) {
+          emailSpan.textContent = email;
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div class="card">
+      <div class="status-badge">
+        <div class="status-dot"></div>
+        DOĞRULAMA BAŞARILI
+      </div>
+      <h1>Hesabın doğrulandı ✅</h1>
+      <p>Artık hesabını güvenle kullanabilirsin.</p>
+      <p class="email" id="user-email"></p>
+      <p class="small">
+        Bu sayfayı yanlışlıkla açtıysan herhangi bir işlem yapmana gerek yok.
+      </p>
+    </div>
+  </body>
+</html>
