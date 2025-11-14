@@ -101,7 +101,11 @@
 
       // Uygulamaya yönlendir
       function openApp() {
-        window.location.href = "https://play.google.com/store/apps/details?id=com.ilkerkamis.myapp";
+        const hash = window.location.hash || "";
+
+        const deeplink = "testapp:///components/pages/auth/login";
+
+        window.location.href = deeplink;
       }
     </script>
   </head>
