@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nEmail confirmation ve password reset sayfalarını güncelle\n\n- index.html: Email doğrulama sayfası olarak güncellendi\n- reset-password.html: Şifre sıfırlama sayfası eklendi\n- Her iki sayfa da Google Play Store''daki uygulamaya yönlendirme yapıyor\n- Uygulama paketi: com.ilkerkamis.myapp\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push)",
+      "Bash(git pull:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
